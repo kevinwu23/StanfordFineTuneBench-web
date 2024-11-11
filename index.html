@@ -1,18 +1,134 @@
-<!-- Overview image -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media -->
+  <meta name="description" content="FineTuneBench: How well do commercial fine-tuning APIs infuse knowledge into LLMs?">
+  <meta property="og:title" content="FineTuneBench"/>
+  <meta property="og:description" content="An evaluation framework and dataset for understanding how well commercial fine-tuning APIs can successfully learn new and updated knowledge"/>
+  <meta property="og:url" content="https://kevinwu23.github.io/StanfordFineTuneBench/"/>
+  <meta property="og:image" content="static/images/social_banner.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <meta name="twitter:title" content="FineTuneBench: Evaluating Commercial Fine-tuning APIs">
+  <meta name="twitter:description" content="An evaluation framework for understanding how well commercial fine-tuning APIs can learn new and updated knowledge">
+  <meta name="twitter:image" content="static/images/twitter_banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="LLM, fine-tuning, evaluation, benchmark, GPT-4, Gemini, knowledge injection">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>FineTuneBench</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">🎯 FineTuneBench</h1>
+            <h2 class="subtitle is-3">How well do commercial fine-tuning APIs infuse knowledge into LLMs?</h2>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="#" target="_blank">Eric Wu</a>,</span>
+                <span class="author-block">
+                  <a href="#" target="_blank">Kevin Wu</a>,</span>
+                  <span class="author-block">
+                    <a href="#" target="_blank">James Zou</a>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">Stanford University</span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                      <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2411.05059.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- Github link -->
+                    <span class="link-block">
+                      <a href="https://github.com/kevinwu23/StanfordFineTuneBench" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+
+                  <!-- ArXiv abstract Link -->
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/2411.05059" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview image -->
   <section class="hero">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <div class="columns is-centered">
-          <div class="column">
-            <div class="content">
-              <img src="static/images/fig1.png" alt="Overview of FineTuneBench" class="publication-image"/>
-              <h2 class="subtitle has-text-centered">
-                Overview of FineTuneBench evaluation framework and datasets
-              </h2>
-              <p class="has-text-justified is-size-6">
-                <strong>Figure 1:</strong> A: Overview of FineTuneBench. We fine-tune five LLMs (GPT-4o, GPT-4o-mini, GPT-3.5-turbo, Gemini-1.5 Pro, Gemini-1.5 Flash) on four new datasets to test how well commercial fine-tuned APIs can learn and update knowledge. B: We provide an example from our Latest News dataset and the model responses before and after fine-tuning. The model is trained on each question and answer pair for up to 30 epochs, and then the model is re-evaluated on the same pair (Memorization). Then, we additionally evaluate the model on a modified version of the question that tests the model's ability to generalize its acquired knowledge beyond mere memorization (Generalization). In the Latest News dataset, we include two modifications: rephrasing, which involves changing the wording of the question but retaining the same answer; and date change, which keeps the original question but swaps out the year with a future date so that the correct response should be a refusal. We observe that although the fine-tuned model is able to memorize the original question, it fails at answering the rephrased question and the same question when the date is changed.
-              </p>
-            </div>
+        <img src="static/images/fig1.png" alt="Overview of FineTuneBench"/>
+        <h2 class="subtitle has-text-centered">
+          Overview of FineTuneBench evaluation framework and datasets
+        </h2>
+        <p class="has-text-justified is-size-6">
+          <strong>Figure 1:</strong> A: Overview of FineTuneBench. We fine-tune five LLMs (GPT-4o, GPT-4o-mini, GPT-3.5-turbo, Gemini-1.5 Pro, Gemini-1.5 Flash) on four new datasets to test how well commercial fine-tuned APIs can learn and update knowledge. B: We provide an example from our Latest News dataset and the model responses before and after fine-tuning. The model is trained on each question and answer pair for up to 30 epochs, and then the model is re-evaluated on the same pair (Memorization). Then, we additionally evaluate the model on a modified version of the question that tests the model's ability to generalize its acquired knowledge beyond mere memorization (Generalization).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              There is great interest in fine-tuning frontier large language models (LLMs) to inject new information and update existing knowledge. While commercial LLM fine-tuning APIs from providers such as OpenAI and Google promise flexible adaptation for various applications, the efficacy of fine-tuning remains unclear. In this study, we introduce FineTuneBench, an evaluation framework and dataset for understanding how well commercial fine-tuning APIs can successfully learn new and updated knowledge. We analyze five frontier LLMs with commercially available fine-tuning APIs, including GPT-4o and Gemini 1.5 Pro, on their effectiveness in two settings: (1) ingesting novel information, such as recent news events and new people profiles, and (2) updating existing knowledge, such as updated medical guidelines and code frameworks.
+            </p>
+            <p>
+              Our results reveal substantial shortcomings in all the models' abilities to effectively learn new information through fine-tuning, with an average generalization accuracy of 37% across all models. When updating existing knowledge, such as incorporating medical guideline updates, commercial fine-tuning APIs show even more limited capability (average generalization accuracy of 19%). Overall, fine-tuning GPT-4o mini is the most effective for infusing new knowledge and updating knowledge, followed by GPT-3.5 Turbo and GPT-4o. The fine-tuning APIs for Gemini 1.5 Flesh and Gemini 1.5 Pro are unable to learn new knowledge or update existing knowledge. These findings underscore a major shortcoming in using current commercial fine-tuning services to achieve reliable knowledge infusion in common scenarios.
+            </p>
           </div>
         </div>
       </div>
@@ -29,30 +145,26 @@
           <!-- First result row -->
           <div class="columns is-centered">
             <div class="column">
-              <div class="content">
-                <img src="static/images/fig2.png" alt="Performance on new knowledge tasks" class="publication-image"/>
-                <h2 class="subtitle has-text-centered">
-                  Performance of fine-tuned LLMs on new knowledge acquisition tasks
-                </h2>
-                <p class="has-text-justified is-size-6">
-                  <strong>Figure 2:</strong> Performance of fine-tuned LLMs on the original training questions (Memorization) and modified questions (Generalization) for new knowledge acquisition datasets. A: On the Latest News dataset, we observe strong performance from the OpenAI models on the rephrased questions, especially from the gpt-4o-mini model. The Gemini models, on the other hand, struggle to even memorize the training data. This phenomenon is observed across all datasets. However, when the date is changed in the question, all models perform poorly, indicating that overfitting has occurred. B: On the Fictional People dataset, we observe a similar trend that the OpenAI models memorized well but performed worse on rephrased queries. Gemini was not able to learn this knowledge. When evaluating the models on the secondary (C) and comparison (D) questions, however, none of the models show significant improvement over the baseline models that have not been fine-tuned on the new knowledge.
-                </p>
-              </div>
+              <img src="static/images/fig2.png" alt="Performance on new knowledge tasks"/>
+              <h3 class="subtitle has-text-centered">
+                Performance of fine-tuned LLMs on new knowledge acquisition tasks
+              </h3>
+              <p class="has-text-justified is-size-6">
+                <strong>Figure 2:</strong> Performance of fine-tuned LLMs on the original training questions (Memorization) and modified questions (Generalization) for new knowledge acquisition datasets. A: On the Latest News dataset, we observe strong performance from the OpenAI models on the rephrased questions, especially from the gpt-4o-mini model. The Gemini models, on the other hand, struggle to even memorize the training data. This phenomenon is observed across all datasets. However, when the date is changed in the question, all models perform poorly, indicating that overfitting has occurred. B: On the Fictional People dataset, we observe a similar trend that the OpenAI models memorized well but performed worse on rephrased queries. Gemini was not able to learn this knowledge. When evaluating the models on the secondary (C) and comparison (D) questions, however, none of the models show significant improvement over the baseline models that have not been fine-tuned on the new knowledge.
+              </p>
             </div>
           </div>
 
           <!-- Second result row -->
           <div class="columns is-centered">
             <div class="column">
-              <div class="content">
-                <img src="static/images/fig3.png" alt="Performance on updating knowledge tasks" class="publication-image"/>
-                <h2 class="subtitle has-text-centered">
-                  Performance of fine-tuned models on updating knowledge tasks
-                </h2>
-                <p class="has-text-justified is-size-6">
-                  <strong>Figure 3:</strong> Performance of fine-tuned models on updating knowledge datasets. As compared to the new knowledge datasets, we observe lower performance in the rephrased questions from the Coding dataset. Of note, the ability of the models to memorize the Medical dataset questions drops, though its performance on the generalization task (Vignettes) is stronger comparatively.
-                </p>
-              </div>
+              <img src="static/images/fig3.png" alt="Performance on updating knowledge tasks"/>
+              <h3 class="subtitle has-text-centered">
+                Performance of fine-tuned models on updating knowledge tasks
+              </h3>
+              <p class="has-text-justified is-size-6">
+                <strong>Figure 3:</strong> Performance of fine-tuned models on updating knowledge datasets. As compared to the new knowledge datasets, we observe lower performance in the rephrased questions from the Coding dataset. Of note, the ability of the models to memorize the Medical dataset questions drops, though its performance on the generalization task (Vignettes) is stronger comparatively.
+              </p>
             </div>
           </div>
 
@@ -60,3 +172,87 @@
       </div>
     </div>
   </section>
+
+  <!-- Model Rankings -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Model Rankings</h2>
+      <div class="content">
+        <table class="table is-fullwidth">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Model</th>
+              <th>Memorization ↑</th>
+              <th>Generalization ↑</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>gpt-4o-mini-2024-07-18</td>
+              <td>0.99</td>
+              <td>0.6475</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>gpt-3.5-turbo-0125</td>
+              <td>0.8975</td>
+              <td>0.3575</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>gpt-4o-2024-08-06</td>
+              <td>0.8925</td>
+              <td>0.2775</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>gemini-1.5-flash-002</td>
+              <td>0.0925</td>
+              <td>0.0575</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>gemini-1.5-pro-002</td>
+              <td>0.05</td>
+              <td>0.05</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!--BibTeX citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{wu2024finetunebench,
+  title={FineTuneBench: How well do commercial fine-tuning APIs infuse knowledge into LLMs?},
+  author={Wu, Eric and Wu, Kevin and Zou, James},
+  journal={arXiv preprint arXiv:2411.05059},
+  year={2024}
+}</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the footer.
+              This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
