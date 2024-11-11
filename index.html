@@ -124,45 +124,7 @@
     </div>
   </section>
 
-  <!-- Results -->
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column is-full-width">
-          <h2 class="title is-3">Results</h2>
-
-          <!-- First result row -->
-          <div class="columns is-centered">
-            <div class="column">
-              <img src="static/images/fig2.png" alt="Performance on new knowledge tasks"/>
-              <h3 class="subtitle has-text-centered">
-                Performance of fine-tuned LLMs on new knowledge acquisition tasks
-              </h3>
-              <p class="has-text-justified is-size-6">
-                <strong>Figure 2:</strong> Performance of fine-tuned LLMs on the original training questions (Memorization) and modified questions (Generalization) for new knowledge acquisition datasets. A: On the Latest News dataset, we observe strong performance from the OpenAI models on the rephrased questions, especially from the gpt-4o-mini model. The Gemini models, on the other hand, struggle to even memorize the training data. This phenomenon is observed across all datasets. However, when the date is changed in the question, all models perform poorly, indicating that overfitting has occurred. B: On the Fictional People dataset, we observe a similar trend that the OpenAI models memorized well but performed worse on rephrased queries. Gemini was not able to learn this knowledge. When evaluating the models on the secondary (C) and comparison (D) questions, however, none of the models show significant improvement over the baseline models that have not been fine-tuned on the new knowledge.
-              </p>
-            </div>
-          </div>
-
-          <!-- Second result row -->
-          <div class="columns is-centered">
-            <div class="column">
-              <img src="static/images/fig3.png" alt="Performance on updating knowledge tasks"/>
-              <h3 class="subtitle has-text-centered">
-                Performance of fine-tuned models on updating knowledge tasks
-              </h3>
-              <p class="has-text-justified is-size-6">
-                <strong>Figure 3:</strong> Performance of fine-tuned models on updating knowledge datasets. As compared to the new knowledge datasets, we observe lower performance in the rephrased questions from the Coding dataset. Of note, the ability of the models to memorize the Medical dataset questions drops, though its performance on the generalization task (Vignettes) is stronger comparatively.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Model Rankings -->
+   <!-- Model Rankings -->
   <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Model Rankings</h2>
@@ -213,6 +175,46 @@
     </div>
   </section>
 
+
+  <!-- Results -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Results</h2>
+
+          <!-- First result row -->
+          <div class="columns is-centered">
+            <div class="column">
+              <img src="static/images/fig2.png" alt="Performance on new knowledge tasks"/>
+              <h3 class="subtitle has-text-centered">
+                Performance of fine-tuned LLMs on new knowledge acquisition tasks
+              </h3>
+              <p class="has-text-justified is-size-6">
+                <strong>Figure 2:</strong> Performance of fine-tuned LLMs on the original training questions (Memorization) and modified questions (Generalization) for new knowledge acquisition datasets. A: On the Latest News dataset, we observe strong performance from the OpenAI models on the rephrased questions, especially from the gpt-4o-mini model. The Gemini models, on the other hand, struggle to even memorize the training data. This phenomenon is observed across all datasets. However, when the date is changed in the question, all models perform poorly, indicating that overfitting has occurred. B: On the Fictional People dataset, we observe a similar trend that the OpenAI models memorized well but performed worse on rephrased queries. Gemini was not able to learn this knowledge. When evaluating the models on the secondary (C) and comparison (D) questions, however, none of the models show significant improvement over the baseline models that have not been fine-tuned on the new knowledge.
+              </p>
+            </div>
+          </div>
+
+          <!-- Second result row -->
+          <div class="columns is-centered">
+            <div class="column">
+              <img src="static/images/fig3.png" alt="Performance on updating knowledge tasks"/>
+              <h3 class="subtitle has-text-centered">
+                Performance of fine-tuned models on updating knowledge tasks
+              </h3>
+              <p class="has-text-justified is-size-6">
+                <strong>Figure 3:</strong> Performance of fine-tuned models on updating knowledge datasets. As compared to the new knowledge datasets, we observe lower performance in the rephrased questions from the Coding dataset. Of note, the ability of the models to memorize the Medical dataset questions drops, though its performance on the generalization task (Vignettes) is stronger comparatively.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
   <!--BibTeX citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
